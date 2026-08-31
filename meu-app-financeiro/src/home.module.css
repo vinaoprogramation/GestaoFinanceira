@@ -7,12 +7,134 @@
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   background-color: #ffd1f3;
 
   font-family: 'Google Sans', sans-serif;
-
-  padding: 20px;
   box-sizing: border-box;
+}
+
+.container{
+  min-width: 800px;
+  max-width: 1000px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffffff;
+
+  border-radius: 15px;
+
+  box-shadow: 0 1px 8px rgba(3, 3, 3, 0.25);
+
+  padding: 40px;
+  box-sizing: border-box;
+  align-self: center;
+
+}
+
+.titulo{
+  text-align: left;
+}
+
+.conteudo{
+  width: 100%;
+}
+
+.card{
+  min-width: 70px;
+  max-width: 70px;
+  min-height: 70px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffffff;
+
+  border-radius: 15px;
+
+  box-shadow: 0 1px 8px rgba(3, 3, 3, 0.25);
+
+  box-sizing: border-box;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  border-width: 0px;
+  padding: 5px;
+  transition: opacity 0.05s;
+
+}
+
+.card:active{
+  opacity: 0.8;
+}
+
+.texto{
+  font-size: 10px;
+  text-align: center;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.tela{
+  width: 100vw;  
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.329);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.containerInput{
+  min-width: 800px;
+  max-width: 1000px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffffff;
+
+  border-radius: 15px;
+
+  box-shadow: 0 1px 8px rgba(3, 3, 3, 0.25);
+
+  padding: 40px;
+  box-sizing: border-box;
+  align-self: flex-start;
+  margin-top: 200px;
+
+}
+
+.botoes{
+  margin-top: auto;
+  gap: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.botao{
+  border-width: 0px;
+  background-color: #be2929;
+  box-shadow: 1px 1px 3px black;
+  padding: 10px;
+  border-radius: 5px;
+  align-self: flex-end;
+  width: 30%;
+  
+  
+}
+
+
+.botao:active{  
+  opacity: 0.8;
+}
+
+
+.textoBotao{
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.criar{
+  background-color: #46751a;
 }

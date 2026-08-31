@@ -3,7 +3,7 @@ import { storeToken, removeToken } from './authStorage';
 
 import api from './api';
 
-const BASE_URL = "http://localhost:3000"
+const BASE_URL = "http://localhost:3001"
 
 const useAutenticacao = create((set, get) => ({
   autenticado: false,

@@ -17,7 +17,7 @@ app.use(cors(corsOptions))
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: '31415122448',
+  password: 'escola',
   database: 'gestao_financeira_db'
 });
 
@@ -655,6 +655,6 @@ app.patch("/conta/transfere/:id", middleware, async (req, res) => {
 
 })
 
-app.listen(3000, (req, res) => {
-  console.log("Servidor rodando na porta 3000")
+app.listen(3001, (req, res) => {
+  console.log("Servidor rodando na porta 3001")
 })
