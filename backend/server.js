@@ -17,7 +17,7 @@ app.use(cors(corsOptions))
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'escola',
+  password: '31415122448',
   database: 'gestao_financeira_db'
 });
 

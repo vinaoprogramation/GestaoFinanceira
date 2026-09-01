@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:opsz,wght@17..18,400..700&display=swap');
 
 .main {
@@ -12,13 +11,14 @@
   background-color: #ffd1f3;
 
   font-family: 'Google Sans', sans-serif;
+
   box-sizing: border-box;
 }
 
-.container{
+.container {
   min-width: 800px;
   max-width: 1000px;
-  min-height: 300px;
+  height: 350px;
   display: flex;
   flex-direction: column;
 
@@ -31,18 +31,19 @@
   padding: 40px;
   box-sizing: border-box;
   align-self: center;
+  margin: 20px 0;
 
 }
 
-.titulo{
+.titulo {
   text-align: left;
 }
 
-.conteudo{
+.conteudo {
   width: 100%;
 }
 
-.card{
+.card {
   min-width: 70px;
   max-width: 70px;
   min-height: 70px;
@@ -64,19 +65,19 @@
 
 }
 
-.card:active{
+.card:active {
   opacity: 0.8;
 }
 
-.texto{
+.texto {
   font-size: 10px;
   text-align: center;
   align-self: center;
   margin-top: 20px;
 }
 
-.tela{
-  width: 100vw;  
+.tela {
+  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.329);
   position: absolute;
@@ -85,10 +86,11 @@
   box-sizing: border-box;
 }
 
-.containerInput{
+.containerInput {
   min-width: 800px;
   max-width: 1000px;
-  min-height: 500px;
+  min-height: 60vh;
+
   display: flex;
   flex-direction: column;
 
@@ -101,18 +103,36 @@
   padding: 40px;
   box-sizing: border-box;
   align-self: flex-start;
-  margin-top: 200px;
+  margin: auto 0;
 
 }
 
-.botoes{
+.botoes {
   margin-top: auto;
   gap: 20px;
   display: flex;
   justify-content: flex-end;
 }
 
-.botao{
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  width: 80%;
+  padding: 13px;
+  border-radius: 5px;
+  border-width: 0px;
+  box-shadow: 1px 0px 3px black;
+}
+
+.input.botao:active {
+  border-width: 0px;
+}
+
+.botao {
   border-width: 0px;
   background-color: #be2929;
   box-shadow: 1px 1px 3px black;
@@ -120,21 +140,56 @@
   border-radius: 5px;
   align-self: flex-end;
   width: 30%;
-  
-  
+
+
 }
 
 
-.botao:active{  
+.botao:active {
   opacity: 0.8;
 }
 
 
-.textoBotao{
+.textoBotao {
   color: #ffffff;
   font-weight: 600;
 }
 
-.criar{
+.criar {
   background-color: #46751a;
+}
+
+.item {
+  list-style: none;
+}
+
+.lista {
+  list-style: none;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.itemLista {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.658);
+  width: 60%;
+  padding: 20px;
+  border-radius: 10px;
+  border-width: 0px;
+  font-family: 'Google Sans', sans-serif;
+  text-align: left;
+  font-size: 14px;
+  transition: 0.1s;
+  box-sizing: border-box;
+}
+
+.itemLista:hover {
+  width: 61%;
+  padding: 25px;
+  transition: 0.1s;
+}
+
+.itemLista:active{
+  opacity: 0.5;
 }
