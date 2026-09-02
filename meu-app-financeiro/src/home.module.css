@@ -18,7 +18,7 @@
 .container {
   min-width: 800px;
   max-width: 1000px;
-  height: 350px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
 
@@ -44,29 +44,35 @@
 }
 
 .card {
-  min-width: 70px;
-  max-width: 70px;
-  min-height: 70px;
+  margin-top: 20px;
+  transition: opacity 0.05s;
+  border-radius: 15px;
+  background-color: #ffffff;
+
+}
+
+.card:active {
+  opacity: 0.8;
+}
+
+
+.imagemAdicionar{
+min-width: 50px;
+  max-width: 50px;
+  min-height: 50px;
   display: flex;
   flex-direction: column;
 
-  background-color: #ffffff;
+  background-color: transparent;
 
   border-radius: 15px;
 
   box-shadow: 0 1px 8px rgba(3, 3, 3, 0.25);
 
   box-sizing: border-box;
-  margin-top: 20px;
+  
   flex-wrap: wrap;
   border-width: 0px;
-  padding: 5px;
-  transition: opacity 0.05s;
-
-}
-
-.card:active {
-  opacity: 0.8;
 }
 
 .texto {
@@ -167,8 +173,9 @@
   list-style: none;
   flex-wrap: wrap;
   display: flex;
-  flex-direction: column;
-  gap: 10px
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
 }
 
 .itemLista {
@@ -190,6 +197,28 @@
   transition: 0.1s;
 }
 
-.itemLista:active{
+.itemLista:active {
   opacity: 0.5;
 }
+
+.imagem {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+  align-self: center;
+  margin: 0 auto;
+}
+
+.botaoImagem{
+  border-width: 0px;
+  background-color: transparent;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.botaoImagem:active{
+  opacity: 0.5;
+}
+

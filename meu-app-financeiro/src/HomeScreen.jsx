@@ -8,7 +8,9 @@ import useUsuario from './Service/useUsuario';
 import useBancario from './Service/useBancario';
 
 
-
+import excluir from './assets/bin.png';
+import editar from './assets/edit.png';
+import adicionar from './assets/add.png';
 
 function HomeScreen() {
 
@@ -54,7 +56,7 @@ function HomeScreen() {
     if (criando) {
       setNomeConta("");
       setSaldoInicial("");
-      setSenhaConta("");
+      setSenha("");
       setTela();
       if (consultaContas) {
         consultaContas();
@@ -69,43 +71,63 @@ function HomeScreen() {
   }, [consultaContas])
 
   function listarContas() {
-  
-  const listaContas = contas;
 
-  const consultaConta = async (id, senha) => {
-    if(!id || !senha){
-      console.log("Faltam parâmetros (tela)")
-      return;
+    const listaContas = contas;
+
+    const consultaConta = async (id, senha) => {
+      if (!id || !senha) {
+        console.log("Faltam parâmetros (tela)")
+        return;
+      }
+
+      const consulta = await consultaConta(id, senha);
+      if (consulta) {
+        setSenha("");
+        setInputConta();
+        setIndex(null);
+        alert("Conta autenticada com sucesso!")
+      }
     }
 
-    const consulta = await consultaConta(id, senha);
-    if(consulta){
-      setSenhaConta("");
-      setInputConta();
-      setIndex(null);
-      alert("Conta autenticada com sucesso!")
-    }
+
+    return <>
+
+      <ul className={styles.lista}>
+
+        {listaContas.map((conta, index) => <>
+          <button key={index}
+            className={styles.itemLista}
+            onClick={() => {
+              setInputConta();
+              setIndex(conta.id_conta)
+            }}
+          >
+            {conta.nome_conta}
+          </button>
+
+          <button className={styles.botaoImagem}>
+            <img
+              className={styles.imagem}
+              src={editar}
+              alt="Ícone editar"
+            />
+          </button>
+
+
+
+          <button className={styles.botaoImagem}>
+            <img
+              className={styles.imagem}
+              src={excluir}
+              alt="Ícone excluir"
+            />
+          </button>
+
+
+        </>)}
+      </ul>
+    </>;
   }
-
-  
-  return (
-
-    <ul className={styles.lista}>
-
-      {listaContas.map((conta, index) => (
-        <button key={index}
-          className={styles.itemLista}
-          onClick={() => {
-            setInputConta();
-            setIndex(conta.id_conta)
-          }}
-        >
-          {conta.nome_conta}
-        </button>
-      ))}
-    </ul>
-  );
-}
 
 
   return <>
@@ -127,7 +149,10 @@ function HomeScreen() {
             setTela();
           }}
         >
-          <p className={styles.texto}>Adicionar conta</p>
+          <img
+            src={adicionar}
+            className={styles.imagemAdicionar}
+          />
         </button>
       </div>
 
@@ -158,8 +183,8 @@ function HomeScreen() {
                     className={styles.input}
                     type="password"
                     placeholder="Senha"
-                    value={senhaConta}
-                    onChange={(e) => setSenhaConta(e.target.value)}
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
                   />
                 </div>
 
@@ -198,7 +223,7 @@ function HomeScreen() {
 
       {
         mostrarInputConta ?
-        <>
+          <>
             <div className={styles.tela}>
               <div className={styles.containerInput}>
 
@@ -248,7 +273,7 @@ function HomeScreen() {
           null
       }
 
-      
+
 
 
     </section>
